@@ -1,31 +1,35 @@
 package com.finite.covidinfoleads;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Resources extends AppCompatActivity {
+public class Beds extends AppCompatActivity {
 
+    RecyclerView bedrecview;
+    myadapter adapter;
 
-    @SuppressLint("ResourceType")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resources);
+        setContentView(R.layout.activity_beds);
 
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
+        bedrecview=(RecyclerView)findViewById(R.id.bedrecview);
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
+//        linearLayoutManager.setReverseLayout(true);
+//        linearLayoutManager.setStackFromEnd(true);
+        bedrecview.setLayoutManager(new LinearLayoutManager(this));
+
+        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barbeds);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#ff0066"))
@@ -37,19 +41,18 @@ public class Resources extends AppCompatActivity {
         bottomNavigationBar
                 .setMode(BottomNavigationBar.MODE_SHIFTING);
 
-
-
-
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
             @Override
             public void onTabSelected(int position) {
                 if(position==0) {
-                    Intent intent = new Intent(Resources.this, Vaccine.class);
+                    Intent intent = new Intent(Beds.this, Vaccine.class);
                     startActivity(intent);
                     finish();
                 }
+                else if(position==1)
+                    bedrecview.scrollToPosition(position-1);
                 else if(position==2) {
-                    Intent intent = new Intent(Resources.this, Dashboard.class);
+                    Intent intent = new Intent(Beds.this, Dashboard.class);
                     startActivity(intent);
                     finish();
                 }
@@ -59,38 +62,29 @@ public class Resources extends AppCompatActivity {
             }
             @Override
             public void onTabReselected(int position) {
+                if(position==1)
+                    bedrecview.scrollToPosition(position-1);
             }
         });
 
+        FirebaseRecyclerOptions<model> options =
+                new FirebaseRecyclerOptions.Builder<model>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Beds").orderByChild("reversetoken"), model.class)
+                        .build();
+        adapter = new myadapter(options);
+        bedrecview.setAdapter(adapter);
+
     }
 
-    public void clickBeds(View view) {
-        Intent intent = new Intent(Resources.this, Beds.class);
-        startActivity(intent);
+    @Override
+    protected void onStart() {
+        super.onStart();
+        adapter.startListening();
     }
 
-    public void clickOxy(View view) {
-        Intent intent = new Intent(Resources.this, Oxygen.class);
-        startActivity(intent);
-    }
-
-    public void clickMeds(View view) {
-        Intent intent = new Intent(Resources.this, Medicines.class);
-        startActivity(intent);
-    }
-
-    public void clickPlasma(View view) {
-        Intent intent = new Intent(Resources.this, Plasma.class);
-        startActivity(intent);
-    }
-
-    public void clickOther(View view) {
-        Intent intent = new Intent(Resources.this, Other.class);
-        startActivity(intent);
-    }
-
-    public void clickAll(View view) {
-        Intent intent = new Intent(Resources.this, All.class);
-        startActivity(intent);
+    @Override
+    protected void onStop() {
+        super.onStop();
+        adapter.stopListening();
     }
 }

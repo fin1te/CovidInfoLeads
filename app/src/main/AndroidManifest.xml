@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.finite.covidinfoleads">
-    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -10,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidInfoLeads">
-        <activity android:name=".Resources"></activity>
+        <activity android:name=".All"></activity>
+        <activity android:name=".Other" />
+        <activity android:name=".Oxygen" />
+        <activity android:name=".Plasma" />
+        <activity android:name=".Medicines" />
+        <activity android:name=".Beds" />
+        <activity android:name=".Resources" />
         <activity android:name=".Vaccine" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainActivity">
