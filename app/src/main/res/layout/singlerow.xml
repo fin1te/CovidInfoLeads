@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:elevation="15dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityName"
+            android:text="City"
+            android:textStyle="bold"
+            android:textSize="25sp"
+            android:textColor="#000"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/resourcetype"
+            android:text="Resource Type"
+            android:textSize="21sp"
+            android:layout_marginTop="5dp"
+            android:textColor="#ff0066"
+            android:layout_below="@id/cityName"
+            tools:ignore="HardcodedText" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/body"
+            android:text="Body"
+            android:textSize="20sp"
+            android:textColor="#000"
+            android:layout_marginTop="15dp"
+            android:layout_below="@id/resourcetype"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/verifiedtime"
+            android:text="Time"
+            android:textSize="18sp"
+            android:layout_marginTop="15dp"
+            android:textColor="#656565"
+            android:layout_below="@id/body"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/verifieddate"
+            android:text="Date"
+            android:textSize="18sp"
+            android:textColor="#656565"
+            android:layout_below="@id/verifiedtime"
+            tools:ignore="HardcodedText" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

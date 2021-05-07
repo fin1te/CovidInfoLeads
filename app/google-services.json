@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "79793947593",
+    "firebase_url": "https://covidinfoleads-8e6ae-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "covidinfoleads-8e6ae",
+    "storage_bucket": "covidinfoleads-8e6ae.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:79793947593:android:611d3302121a130cc4de18",
+        "android_client_info": {
+          "package_name": "com.finite.covidinfoleads"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "79793947593-muovfn654khju2bhnukpn3j8h71m74vm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSYKUl5xf-lfJ3jAzVDJy7WNK4y-6UrXk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "79793947593-muovfn654khju2bhnukpn3j8h71m74vm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
