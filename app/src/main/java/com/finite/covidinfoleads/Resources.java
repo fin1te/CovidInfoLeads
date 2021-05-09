@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
 import android.view.View;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
@@ -28,9 +29,10 @@ public class Resources extends AppCompatActivity {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#ff0066"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
                 .setFirstSelectedPosition(1)
                 .initialise();
 
@@ -49,6 +51,11 @@ public class Resources extends AppCompatActivity {
                     finish();
                 }
                 else if(position==2) {
+                    Intent intent = new Intent(Resources.this, CovidData.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if(position==3) {
                     Intent intent = new Intent(Resources.this, Dashboard.class);
                     startActivity(intent);
                     finish();
@@ -65,31 +72,37 @@ public class Resources extends AppCompatActivity {
     }
 
     public void clickBeds(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, Beds.class);
         startActivity(intent);
     }
 
     public void clickOxy(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, Oxygen.class);
         startActivity(intent);
     }
 
     public void clickMeds(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, Medicines.class);
         startActivity(intent);
     }
 
     public void clickPlasma(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, Plasma.class);
         startActivity(intent);
     }
 
     public void clickOther(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, Other.class);
         startActivity(intent);
     }
 
     public void clickAll(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Intent intent = new Intent(Resources.this, All.class);
         startActivity(intent);
     }

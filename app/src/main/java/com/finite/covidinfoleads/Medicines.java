@@ -31,9 +31,10 @@ public class Medicines extends AppCompatActivity {
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barmeds);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#ff0066"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
                 .setFirstSelectedPosition(1)
                 .initialise();
 
@@ -51,6 +52,11 @@ public class Medicines extends AppCompatActivity {
                 else if(position==1)
                     medsrecview.scrollToPosition(position-1);
                 else if(position==2) {
+                    Intent intent = new Intent(Medicines.this, CovidData.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if(position==3) {
                     Intent intent = new Intent(Medicines.this, Dashboard.class);
                     startActivity(intent);
                     finish();

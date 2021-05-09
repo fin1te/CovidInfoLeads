@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidInfoLeads">
-        <activity android:name=".All"></activity>
+        <activity android:name=".CovidData"></activity>
+        <activity android:name=".All" />
         <activity android:name=".Other" />
         <activity android:name=".Oxygen" />
         <activity android:name=".Plasma" />

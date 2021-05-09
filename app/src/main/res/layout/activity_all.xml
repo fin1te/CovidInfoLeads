@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#161625"
     tools:context=".Resources">
 
 
@@ -35,7 +35,7 @@
             app:layout_constraintStart_toEndOf="@+id/allrecview"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText,RtlHardcoded" />
-        <GridLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="20dp">
@@ -43,7 +43,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_covid"
+                android:src="@drawable/ic_all"
                 android:elevation="10dp"
                 android:layout_gravity="center|left"
                 android:layout_marginLeft="15dp"
@@ -52,22 +52,22 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
-                android:layout_gravity="center|left"
+                android:layout_gravity="center"
                 android:paddingLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:elevation="8dp"
                 android:gravity="center_vertical"
-                android:text="All - CovidInfoLeads"
+                android:text="All Leads"
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
+                android:textColor="#DFEDFA"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/allrecview"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText,RtlCompat,RtlHardcoded,RtlSymmetry" />
 
-        </GridLayout>
+        </FrameLayout>
 
     </FrameLayout>
 

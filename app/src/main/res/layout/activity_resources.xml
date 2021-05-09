@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="#161625"
     tools:context=".Resources">
 
     <FrameLayout
@@ -33,7 +33,7 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText,RtlHardcoded" />
 
-        <GridLayout
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:elevation="20dp">
@@ -44,27 +44,28 @@
                 android:layout_gravity="center|left"
                 android:layout_marginStart="15dp"
                 android:elevation="10dp"
-                android:src="@drawable/ic_covid"
+                android:src="@drawable/ic_shield"
                 tools:ignore="ContentDescription" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="70dp"
-                android:layout_gravity="center|left"
+                android:layout_gravity="center"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:elevation="8dp"
+                android:paddingStart="20dp"
                 android:gravity="center_vertical"
-                android:text="Resources - CovidInfoLeads"
+                android:text="Resources"
                 android:textAlignment="textStart"
-                android:textColor="@color/black"
+                android:textColor="#DFEDFA"
                 android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/recview"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText,RtlCompat,RtlHardcoded" />
+                tools:ignore="HardcodedText,RtlCompat,RtlHardcoded,RtlSymmetry" />
 
-        </GridLayout>
+        </FrameLayout>
 
     </FrameLayout>
 
@@ -107,7 +108,7 @@
                     android:text="Beds"
                     android:layout_gravity="center"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
@@ -140,7 +141,7 @@
                     android:layout_height="wrap_content"
                     android:text="Oxygen"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
@@ -173,7 +174,7 @@
                     android:layout_height="wrap_content"
                     android:text="Medicines"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
@@ -206,7 +207,7 @@
                     android:layout_height="wrap_content"
                     android:text="Plasma"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
@@ -240,7 +241,7 @@
                     android:layout_height="wrap_content"
                     android:text="Others"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
@@ -275,7 +276,7 @@
                     android:layout_gravity="center"
                     android:text="All"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
+                    android:textColor="#DFEDFA"
                     android:textSize="20sp" />
 
             </GridLayout>
