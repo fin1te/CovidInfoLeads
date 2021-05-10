@@ -1,18 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#161625"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="CovidInfoLeads"
+        android:textColor="@color/white"
+        android:fontFamily="serif"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="v1.0.0"
+        android:textColor="#FFC5C5"
+        android:fontFamily="serif"
+        android:textSize="15sp"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <ImageView
+        android:id="@+id/s1"
+        android:alpha="0"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/ic_splash"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:layout_gravity="center"
+        android:rowCount="2">
+        <ImageView
+            android:id="@+id/s2"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_beds"/>
+        <ImageView
+            android:id="@+id/s3"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_doctor"/>
+        <ImageView
+            android:id="@+id/s4"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_plasma"/>
+        <ImageView
+            android:id="@+id/s5"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volunteer"/>
+        <ImageView
+            android:id="@+id/s6"
+            android:alpha="0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:src="@drawable/ic_rtpcr"/>
+        <ImageView
+            android:id="@+id/s7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:alpha="0"
+            android:src="@drawable/ic_hospitals"/>
+        <ImageView
+            android:id="@+id/s8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:alpha="0"
+            android:src="@drawable/ic_oxygen"/>
+        <ImageView
+            android:id="@+id/s9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+            android:paddingTop="10dp"
+            android:alpha="0"
+        android:src="@drawable/ic_meds"/>
+
+
+
+    </GridLayout>
+
+
+</LinearLayout>

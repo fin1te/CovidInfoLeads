@@ -9,17 +9,23 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
+import android.view.View;
+import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class Resources extends AppCompatActivity {
 
 
-    RecyclerView recview;
-    myadapter adapter;
+    Timer t1,t2,t3,t4,t5,t6;
+    FrameLayout f1,f2,f3,f4,f5,f6;
 
     @SuppressLint("ResourceType")
     @Override
@@ -27,25 +33,27 @@ public class Resources extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_resources);
 
-        recview=(RecyclerView)findViewById(R.id.recview);
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
-//        linearLayoutManager.setReverseLayout(true);
-//        linearLayoutManager.setStackFromEnd(true);
-        recview.setLayoutManager(new LinearLayoutManager(this));
-
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
         bottomNavigationBar
-                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#ff0066"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#ff0066"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
                 .setFirstSelectedPosition(1)
                 .initialise();
 
         bottomNavigationBar
                 .setMode(BottomNavigationBar.MODE_SHIFTING);
 
+        f1 = findViewById(R.id.f1);
+        f2 = findViewById(R.id.f2);
+        f3 = findViewById(R.id.f3);
+        f4 = findViewById(R.id.f4);
+        f5 = findViewById(R.id.f5);
+        f6 = findViewById(R.id.f6);
 
+        timer();
 
 
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
@@ -57,6 +65,11 @@ public class Resources extends AppCompatActivity {
                     finish();
                 }
                 else if(position==2) {
+                    Intent intent = new Intent(Resources.this, CovidData.class);
+                    startActivity(intent);
+                    finish();
+                }
+                else if(position==3) {
                     Intent intent = new Intent(Resources.this, Dashboard.class);
                     startActivity(intent);
                     finish();
@@ -70,24 +83,100 @@ public class Resources extends AppCompatActivity {
             }
         });
 
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("posts").orderByChild("reversetoken"), model.class)
-                        .build();
-        adapter = new myadapter(options);
-        recview.setAdapter(adapter);
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        adapter.startListening();
+    public void clickBeds(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, Beds.class);
+        startActivity(intent);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        adapter.stopListening();
+    public void clickOxy(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, Oxygen.class);
+        startActivity(intent);
+    }
+
+    public void clickMeds(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, Medicines.class);
+        startActivity(intent);
+    }
+
+    public void clickPlasma(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, Plasma.class);
+        startActivity(intent);
+    }
+
+    public void clickOther(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, Other.class);
+        startActivity(intent);
+    }
+
+    public void clickAll(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        Intent intent = new Intent(Resources.this, All.class);
+        startActivity(intent);
+    }
+
+
+    private void timer() {
+        t1 = new Timer();
+        f1.animate().alpha(0f).setDuration(1);
+        t2 = new Timer();
+        f2.animate().alpha(0f).setDuration(1);
+        t3 = new Timer();
+        f3.animate().alpha(0f).setDuration(1);
+        t4 = new Timer();
+        f4.animate().alpha(0f).setDuration(1);
+        t5 = new Timer();
+        f5.animate().alpha(0f).setDuration(1);
+        t6 = new Timer();
+        f6.animate().alpha(0f).setDuration(1);
+
+        t1.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f1.animate().alpha(1f).setDuration(500);
+            }
+        }, 500);
+
+        t2.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f2.animate().alpha(1f).setDuration(500);
+            }
+        }, 500);
+
+        t3.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f3.animate().alpha(1f).setDuration(500);
+            }
+        }, 1000);
+
+        t4.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f4.animate().alpha(1f).setDuration(500);
+            }
+        }, 1000);
+
+        t5.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f5.animate().alpha(1f).setDuration(500);
+            }
+        },1500);
+
+        t6.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f6.animate().alpha(1f).setDuration(500);
+            }
+        }, 1500);
     }
 
 }

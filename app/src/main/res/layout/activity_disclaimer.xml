@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161625"
+    android:orientation="vertical"
+    tools:context=".Disclaimer">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="serif"
+                android:text="Disclaimer"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:elevation="20dp"
+                android:src="@drawable/ic_teamwork"/>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="1"
+                android:elevation="20dp"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/restop"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="The objective of this page is to help people gain access to vital resources by sharing information only.\n\nHowever, we request the beneficiaries to use their discretion and verify the leads on their own before taking any action. If you find inaccurate information or any lead engaging in illegal practices, kindly inform us on our Mail / Twitter Handle.\n\nWe will take it down as soon as possible. We will not be responsible for the actions you take using the information on this page. \n\nWe are just mediating information and are no way responsible for what is being shared. Please avoid sharing and contacting black market resources.\n\nWe strongly encourage to AVOID black market."
+                    android:textAlignment="center"
+                    android:textColor="#92BEFF"
+                    android:textSize="15sp" />
+            </GridLayout>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="1"
+                android:elevation="20dp"
+                android:layout_marginBottom="50dp"
+                android:layout_marginHorizontal="20dp"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/restop"
+                android:rowCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_marginHorizontal="20dp"
+                    android:paddingHorizontal="20dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="This app is not Licensed under any Open Source Initiative License such as Apache 2.0, GNU, GPL, MIT License etc., Hence is not Open Sourced in any manner as of this Version.\n\nIf you Intend to Copy Ideas/Code from this App Please Contact the developer first."
+                    android:textAlignment="center"
+                    android:textColor="#92BEFF"
+                    android:textSize="15sp" />
+            </GridLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+</LinearLayout>

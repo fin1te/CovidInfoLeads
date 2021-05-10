@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="20dp"
+    android:elevation="25dp"
+    app:cardBackgroundColor="@color/restop"
+    android:layout_marginHorizontal="10dp"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="5dp"
+        android:paddingHorizontal="10dp"
+        android:layout_margin="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/docName"
+            android:text="City"
+            android:textStyle="bold"
+            android:textSize="23sp"
+            android:textColor="#E6F3FF"
+            tools:ignore="HardcodedText" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/docNo"
+            android:text="Body"
+            android:textSize="18sp"
+            android:autoLink="phone"
+            android:textIsSelectable="true"
+            android:textColor="#EEF2F6"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/docName"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/docrate"
+            android:text="Body"
+            android:textSize="14sp"
+            android:autoLink="phone"
+            android:textIsSelectable="true"
+            android:textColor="#EAAEFF"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/docNo"
+            tools:ignore="HardcodedText" />
+
+
+
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>
