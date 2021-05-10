@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="35dp"
         android:fontFamily="serif"
+        android:textStyle="bold"
         android:text="Vaccination Slots"
         android:textColor="@color/white"
         android:textSize="30sp"

@@ -30,6 +30,6 @@ public class ContactUs extends AppCompatActivity {
     public void clickEmail(View view) {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Toast.makeText(this, "Write us a Mail, we'll get back to you shortly!", Toast.LENGTH_LONG).show();
-        goToUrl("mailto:rishabhmehta00@gmail.com?subject=");
+        goToUrl("mailto:covidinfoleads1@gmail.com?subject=");
     }
 }
