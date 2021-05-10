@@ -6,40 +6,35 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.HapticFeedbackConstants;
-import android.view.View;
-import android.widget.EditText;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class All extends AppCompatActivity {
+public class Blogs extends AppCompatActivity {
 
-    RecyclerView allrecview;
-    myadapter adapter;
+    RecyclerView blogrecview;
+    blog_adapter blogadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all);
-
-        allrecview=(RecyclerView)findViewById(R.id.allrecview);
-
+        setContentView(R.layout.activity_blogs);
+        blogrecview=(RecyclerView)findViewById(R.id.blogrecview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setReverseLayout(true);
 //        linearLayoutManager.setStackFromEnd(true);
-        allrecview.setLayoutManager(new LinearLayoutManager(this));
+        blogrecview.setLayoutManager(new LinearLayoutManager(this));
 
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barall);
+        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barblog);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#8832E0"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
-                .setFirstSelectedPosition(1)
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#1C1C2E"))
+                .setFirstSelectedPosition(3)
                 .initialise();
 
         bottomNavigationBar
@@ -49,19 +44,17 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabSelected(int position) {
                 if(position==0) {
-                    Intent intent = new Intent(All.this, Vaccine.class);
+                    Intent intent = new Intent(Blogs.this, Vaccine.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                else if(position==1) {
+                    Intent intent = new Intent(Blogs.this, Resources.class);
+                    startActivity(intent);
+                    finish();
+                }
                 else if(position==2) {
-                    Intent intent = new Intent(All.this, CovidData.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else if(position==3) {
-                    Intent intent = new Intent(All.this, Dashboard.class);
+                    Intent intent = new Intent(Blogs.this, CovidData.class);
                     startActivity(intent);
                     finish();
                 }
@@ -72,27 +65,28 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabReselected(int position) {
                 if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                    blogrecview.scrollToPosition(position-1);
             }
         });
 
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("posts").orderByChild("reversetoken"), model.class)
+        FirebaseRecyclerOptions<blogmodel> options =
+                new FirebaseRecyclerOptions.Builder<blogmodel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Blogs").orderByChild("blogorder:"), blogmodel.class)
                         .build();
-        adapter = new myadapter(options);
-        allrecview.setAdapter(adapter);
+        blogadapter = new blog_adapter(options);
+        blogrecview.setAdapter(blogadapter);
+
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+        blogadapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
-
+        blogadapter.stopListening();
     }
 }

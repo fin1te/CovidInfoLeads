@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        Intent intent = new Intent(MainActivity.this, Resources.class);
+        Intent intent = new Intent(MainActivity.this, Dashboard.class);
         startActivity(intent);
         finish();
     }

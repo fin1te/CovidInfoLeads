@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,8 +40,13 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class CovidData extends AppCompatActivity {
+
+    FrameLayout f1,f2,f3,f4,f5,f6;
+    Timer t1,t2,t3,t4,t5,t6;
 
     private String version;
     private FirebaseDatabase firebaseDatabase;
@@ -79,6 +85,15 @@ public class CovidData extends AppCompatActivity {
 
         bottomNavigationBar
                 .setMode(BottomNavigationBar.MODE_SHIFTING);
+
+        f1 = findViewById(R.id.d1);
+        f2 = findViewById(R.id.d2);
+        f3 = findViewById(R.id.d3);
+        f4 = findViewById(R.id.d4);
+        f5 = findViewById(R.id.d5);
+        f6 = findViewById(R.id.d6);
+
+        timer();
 
 
 
@@ -123,6 +138,7 @@ public class CovidData extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 FetchData();
+                timer();
                 swipeRefreshLayout.setRefreshing(false);
                 //Toast.makeText(MainActivity.this, "Data refreshed!", Toast.LENGTH_SHORT).show();
             }
@@ -333,4 +349,62 @@ public class CovidData extends AppCompatActivity {
         view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
         Toast.makeText(this, "A Graph Visualising the below data", Toast.LENGTH_SHORT).show();
     }
+
+    private void timer() {
+        t1 = new Timer();
+        f1.animate().alpha(0f).setDuration(1);
+        t2 = new Timer();
+        f2.animate().alpha(0f).setDuration(1);
+        t3 = new Timer();
+        f3.animate().alpha(0f).setDuration(1);
+        t4 = new Timer();
+        f4.animate().alpha(0f).setDuration(1);
+        t5 = new Timer();
+        f5.animate().alpha(0f).setDuration(1);
+        t6 = new Timer();
+        f6.animate().alpha(0f).setDuration(1);
+
+        t1.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f1.animate().alpha(1f).setDuration(500);
+            }
+        }, 1500);
+
+        t2.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f2.animate().alpha(1f).setDuration(500);
+            }
+        }, 2000);
+
+        t3.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f3.animate().alpha(1f).setDuration(500);
+            }
+        }, 2500);
+
+        t4.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f4.animate().alpha(1f).setDuration(500);
+            }
+        }, 3000);
+
+        t5.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f5.animate().alpha(1f).setDuration(500);
+            }
+        },3500);
+
+        t6.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                f6.animate().alpha(1f).setDuration(500);
+            }
+        }, 4000);
+    }
+
 }

@@ -4,13 +4,574 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#161625"
     tools:context=".Dashboard">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="dashboard"
-        tools:ignore="HardcodedText" />
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="serif"
+                android:text="CovidInfoLeads"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="serif"
+                android:text="v1.0.0"
+                android:textColor="#FFD4E2"
+                android:textSize="13sp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView"
+                tools:ignore="HardcodedText" />
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="70dp"
+                android:layout_gravity="center"
+                android:elevation="20dp"
+                android:outlineSpotShadowColor="@color/gray"
+                android:rowCount="5"
+                android:columnCount="1">
+
+                <GridLayout
+                    android:id="@+id/db_grid_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:rowCount="1"
+                    android:columnCount="3">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickTwitter"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_twitter" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Find us on\nTwitter"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickPlasma"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_plasma" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Donate\nPlasma"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickVolunteer"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_volunteer" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Volunteer\nwith us"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                </GridLayout>
+
+                <FrameLayout
+                    android:id="@+id/db_grid_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:paddingVertical="8dp"
+                    android:paddingHorizontal="10dp"
+                    android:onClick="clickDoctorcons"
+                    android:layout_gravity="center"
+                    android:background="@drawable/restop"
+                    android:elevation="10dp">
+
+                    <GridLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:columnCount="2"
+                        android:rowCount="1">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_doctor" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Online Doctor Consultation"
+                            android:paddingRight="5dp"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="#DFEDFA"
+                            android:textSize="16sp" />
+
+                    </GridLayout>
+
+                </FrameLayout>
+
+                <GridLayout
+                    android:id="@+id/db_grid_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:rowCount="1"
+                    android:columnCount="3">
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickHospitalContacts"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_hospitals" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Hospital\nContacts"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickHomeSample"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_rtpcr" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Home Sample\nCollection"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickCovidHelplines"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_helpline" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="COVID\nHelplines"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+                </GridLayout>
+
+
+
+                <GridLayout
+                    android:id="@+id/db_grid_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:rowCount="1"
+                    android:columnCount="3">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickAbout"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_about" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="About Us"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickAnnouncements"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_announce" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Announcements"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="13sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp"
+                        android:onClick="clickBlogs"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_blog" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text="Blog Posts"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+                </GridLayout>
+
+                <GridLayout
+                    android:id="@+id/db_grid_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:rowCount="1"
+                    android:layout_marginBottom="50dp"
+                    android:columnCount="3">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickCredits"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_credits" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Credits"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickContactUs"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_contactus" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Contact Us"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="13sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:paddingVertical="8dp"
+                        android:paddingHorizontal="10dp"
+                        android:onClick="clickDisclaimer"
+                        android:background="@drawable/restop"
+                        android:elevation="10dp">
+
+                        <GridLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:columnCount="1"
+                            android:rowCount="2">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_disclaimer" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Disclaimer"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textAlignment="center"
+                                android:textColor="#DFEDFA"
+                                android:textSize="14sp" />
+
+                        </GridLayout>
+
+                    </FrameLayout>
+
+                </GridLayout>
+
+            </GridLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"

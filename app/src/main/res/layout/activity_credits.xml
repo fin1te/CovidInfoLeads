@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#161625"
+    android:orientation="vertical"
+    tools:context=".Credits">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="35dp"
+                android:fontFamily="serif"
+                android:text="Credits"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:layout_gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
+            <ImageView
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:elevation="20dp"
+                android:src="@drawable/ic_teamwork"/>
+
+            <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="1"
+                    android:elevation="20dp"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/restop"
+                    android:rowCount="2">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="This Initiative (CovidInfoLeads), this App,\nData and all the Resources is collected\nand Maintained by a Team of awesome\nVolunteers who work hard to help others\nin this crisis we're all facing.\n\nI would like to thank all the Volunteers\nhere at CovidInfoLeads as well as all\nthe Volunteers on the Internet for\ntheir work towards the society 😀"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#92BEFF"
+                        android:textSize="15sp" />
+                </GridLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:paddingBottom="4dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="App Developer"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="serif"
+                android:textColor="@color/white">
+            </TextView>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:rowCount="4"
+                android:onClick="clickRishabh"
+                android:elevation="20dp"
+                android:background="@drawable/restop"
+                android:columnCount="1">
+                <GridLayout
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:rowCount="1"
+                    android:columnCount="2">
+                    <ImageView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/ic_male"
+                        android:padding="5dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Rishabh Mehta"
+                        android:paddingRight="10dp"
+                        android:fontFamily="serif"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="#92BEFF"/>
+
+                </GridLayout>
+            </GridLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Volunteers"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/white">
+            </TextView>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="2"
+                android:elevation="20dp"
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/restop"
+                android:rowCount="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vandana K\nDiksha\nAakriti\nRohit\nYashika\nParidhi S\nAkansha\nShreya A\nNaman J\nNandini\nItadakimasu"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#92BEFF"
+                    android:textSize="15sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Simran Karim\nAnandita K\nShubhanjan C\nBhumika C\nVijyeta P\nAradhana V\nAnuj S\nShreya I\nRiddhima W\nMandakini\nTanvi A"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#92BEFF"
+                    android:textSize="15sp" />
+            </GridLayout>
+
+
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/restop"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:rowCount="2"
+                android:columnCount="1">
+                <GridLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:columnCount="2"
+                    android:elevation="20dp"
+                    android:padding="10dp"
+                    android:background="@drawable/restop"
+                    android:rowCount="1">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Het Patel\nMadhav G\nDipti S\nParam P\nAnirudh"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#92BEFF"
+                        android:textSize="15sp" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Bhavya B\nVedant P\nHusna\nVedant P\nHarshit"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="#92BEFF"
+                        android:textSize="15sp" />
+
+                </GridLayout>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:paddingBottom="8dp"
+                    android:paddingVertical="5dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:text="+Many More Volunteers ❤"
+                    android:textColor="@color/white"/>
+            </GridLayout>
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:padding="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:text="Miscellanous Credits"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="@color/white">
+            </TextView>
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:columnCount="2"
+                android:elevation="20dp"
+                android:layout_marginBottom="70dp"
+                android:padding="10dp"
+                android:background="@drawable/restop"
+                android:rowCount="1">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Covid19India.org : Data API\nCovid19India.org : Disclaimer Idea\nIcons8.com : Gradient Icons\nPngtree.com : Icons\nCodeWithShubh : Covid RTD Idea"
+                    android:padding="10dp"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    android:textColor="#92BEFF"
+                    android:textSize="15sp" />
+
+            </GridLayout>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </ScrollView>
+
+
+</LinearLayout>

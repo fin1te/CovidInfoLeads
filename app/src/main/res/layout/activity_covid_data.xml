@@ -139,6 +139,7 @@
                     android:rowCount="4">
 
                     <FrameLayout
+                        android:id="@+id/d1"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -198,6 +199,7 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/d2"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -257,6 +259,7 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/d3"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -316,6 +319,7 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/d4"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -375,6 +379,7 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/d5"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"
@@ -434,6 +439,7 @@
                     </FrameLayout>
 
                     <FrameLayout
+                        android:id="@+id/d6"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_rowWeight="1"

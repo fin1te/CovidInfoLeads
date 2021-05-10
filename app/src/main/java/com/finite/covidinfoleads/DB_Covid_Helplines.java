@@ -6,40 +6,36 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.HapticFeedbackConstants;
-import android.view.View;
-import android.widget.EditText;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class All extends AppCompatActivity {
+public class DB_Covid_Helplines extends AppCompatActivity {
 
-    RecyclerView allrecview;
-    myadapter adapter;
+    RecyclerView chrecview;
+    ch_adapter chadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all);
+        setContentView(R.layout.activity_d_b__covid__helplines);
 
-        allrecview=(RecyclerView)findViewById(R.id.allrecview);
-
+        chrecview=(RecyclerView)findViewById(R.id.chrecview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setReverseLayout(true);
 //        linearLayoutManager.setStackFromEnd(true);
-        allrecview.setLayoutManager(new LinearLayoutManager(this));
+        chrecview.setLayoutManager(new LinearLayoutManager(this));
 
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barall);
+        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barch);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#8832E0"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
-                .setFirstSelectedPosition(1)
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#1C1C2E"))
+                .setFirstSelectedPosition(3)
                 .initialise();
 
         bottomNavigationBar
@@ -49,19 +45,17 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabSelected(int position) {
                 if(position==0) {
-                    Intent intent = new Intent(All.this, Vaccine.class);
+                    Intent intent = new Intent(DB_Covid_Helplines.this, Vaccine.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                else if(position==1) {
+                    Intent intent = new Intent(DB_Covid_Helplines.this, Resources.class);
+                    startActivity(intent);
+                    finish();
+                }
                 else if(position==2) {
-                    Intent intent = new Intent(All.this, CovidData.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else if(position==3) {
-                    Intent intent = new Intent(All.this, Dashboard.class);
+                    Intent intent = new Intent(DB_Covid_Helplines.this, CovidData.class);
                     startActivity(intent);
                     finish();
                 }
@@ -72,27 +66,29 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabReselected(int position) {
                 if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                    chrecview.scrollToPosition(position-1);
             }
         });
 
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("posts").orderByChild("reversetoken"), model.class)
+        FirebaseRecyclerOptions<chmodel> options =
+                new FirebaseRecyclerOptions.Builder<chmodel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("CovidHelpline").orderByChild("chorder"), chmodel.class)
                         .build();
-        adapter = new myadapter(options);
-        allrecview.setAdapter(adapter);
+        chadapter = new ch_adapter(options);
+        chrecview.setAdapter(chadapter);
+
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+        chadapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
-
+        chadapter.stopListening();
     }
+
 }

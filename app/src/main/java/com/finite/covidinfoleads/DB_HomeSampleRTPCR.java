@@ -6,40 +6,36 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.HapticFeedbackConstants;
-import android.view.View;
-import android.widget.EditText;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class All extends AppCompatActivity {
+public class DB_HomeSampleRTPCR extends AppCompatActivity {
 
-    RecyclerView allrecview;
-    myadapter adapter;
+    RecyclerView samplerecview;
+    sample_adapter sampleadapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all);
+        setContentView(R.layout.activity_d_b__home_sample_r_t_p_c_r);
 
-        allrecview=(RecyclerView)findViewById(R.id.allrecview);
-
+        samplerecview=(RecyclerView)findViewById(R.id.samplerecview);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
 //        linearLayoutManager.setReverseLayout(true);
 //        linearLayoutManager.setStackFromEnd(true);
-        allrecview.setLayoutManager(new LinearLayoutManager(this));
+        samplerecview.setLayoutManager(new LinearLayoutManager(this));
 
-        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barall);
+        BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_barsample);
 
         bottomNavigationBar
                 .addItem(new BottomNavigationItem(R.drawable.ic_vac, "Vaccines").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#1C1C2E"))
+                .addItem(new BottomNavigationItem(R.drawable.ic_res, "Resources").setActiveColor("#8832E0"))
                 .addItem(new BottomNavigationItem(R.drawable.ic_covid, "Covid Data").setActiveColor("#8832E0"))
-                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#8832E0"))
-                .setFirstSelectedPosition(1)
+                .addItem(new BottomNavigationItem(R.drawable.ic_home, "Dashboard").setActiveColor("#1C1C2E"))
+                .setFirstSelectedPosition(3)
                 .initialise();
 
         bottomNavigationBar
@@ -49,19 +45,17 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabSelected(int position) {
                 if(position==0) {
-                    Intent intent = new Intent(All.this, Vaccine.class);
+                    Intent intent = new Intent(DB_HomeSampleRTPCR.this, Vaccine.class);
                     startActivity(intent);
                     finish();
                 }
-                else if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                else if(position==1) {
+                    Intent intent = new Intent(DB_HomeSampleRTPCR.this, Resources.class);
+                    startActivity(intent);
+                    finish();
+                }
                 else if(position==2) {
-                    Intent intent = new Intent(All.this, CovidData.class);
-                    startActivity(intent);
-                    finish();
-                }
-                else if(position==3) {
-                    Intent intent = new Intent(All.this, Dashboard.class);
+                    Intent intent = new Intent(DB_HomeSampleRTPCR.this, CovidData.class);
                     startActivity(intent);
                     finish();
                 }
@@ -72,27 +66,27 @@ public class All extends AppCompatActivity {
             @Override
             public void onTabReselected(int position) {
                 if(position==1)
-                    allrecview.scrollToPosition(position-1);
+                    samplerecview.scrollToPosition(position-1);
             }
         });
 
-        FirebaseRecyclerOptions<model> options =
-                new FirebaseRecyclerOptions.Builder<model>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("posts").orderByChild("reversetoken"), model.class)
+        FirebaseRecyclerOptions<samplemodel> options =
+                new FirebaseRecyclerOptions.Builder<samplemodel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("homeSample").orderByChild("samplecity"), samplemodel.class)
                         .build();
-        adapter = new myadapter(options);
-        allrecview.setAdapter(adapter);
+        sampleadapter = new sample_adapter(options);
+        samplerecview.setAdapter(sampleadapter);
     }
+
     @Override
     protected void onStart() {
         super.onStart();
-        adapter.startListening();
+        sampleadapter.startListening();
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        adapter.stopListening();
-
+        sampleadapter.stopListening();
     }
 }

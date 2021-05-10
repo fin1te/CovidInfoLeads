@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161625"
-    tools:context=".Resources">
+    tools:context=".All">
 
 
 
@@ -23,7 +23,7 @@
             android:layout_marginHorizontal="7dp"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="@drawable/restop"
+
             android:elevation="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             android:textSize="20sp"
@@ -35,6 +35,7 @@
             app:layout_constraintStart_toEndOf="@+id/allrecview"
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="HardcodedText,RtlHardcoded" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -59,6 +60,10 @@
                 android:elevation="8dp"
                 android:gravity="center_vertical"
                 android:text="All Leads"
+                android:fontFamily="serif"
+                android:textStyle="bold"
+                android:hint=""
+                android:textColorHint="@color/gray"
                 android:textAlignment="textStart"
                 android:textColor="#DFEDFA"
                 android:textSize="20sp"
