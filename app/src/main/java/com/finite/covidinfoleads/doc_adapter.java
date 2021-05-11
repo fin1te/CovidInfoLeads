@@ -22,6 +22,7 @@ public class doc_adapter extends FirebaseRecyclerAdapter<docmodel,doc_adapter.do
         doc_viewholder.docName.setText("Dr. " +docmodel.getDocName());
         doc_viewholder.docNo.setText("Phone No : "+docmodel.getDocNo());
         doc_viewholder.docrate.setText("Charges : "+docmodel.getDocrate());
+        doc_viewholder.docTiming.setText("Available Time : "+docmodel.getDocTiming());
 
     }
 
@@ -34,13 +35,14 @@ public class doc_adapter extends FirebaseRecyclerAdapter<docmodel,doc_adapter.do
 
     class doc_viewholder extends RecyclerView.ViewHolder
     {
-        TextView docName,docNo,docrate;
+        TextView docName,docNo,docrate,docTiming;
 
         public doc_viewholder(@NonNull View itemView) {
             super(itemView);
             docName = itemView.findViewById(R.id.docName);
             docNo = itemView.findViewById(R.id.docNo);
             docrate = itemView.findViewById(R.id.docrate);
+            docTiming = itemView.findViewById(R.id.docTiming);
         }
 
     }

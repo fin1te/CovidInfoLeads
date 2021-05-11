@@ -1,7 +1,7 @@
 package com.finite.covidinfoleads;
 
 public class docmodel {
-    String docName,docNo,docrate;
+    String docName,docNo,docrate,docTiming;
 
     docmodel() {
 
@@ -9,10 +9,19 @@ public class docmodel {
 
 
 
-    public docmodel(String docName, String docNo, String docrate) {
+    public docmodel(String docName, String docNo, String docrate, String docTiming) {
         this.docName = docName;
         this.docNo = docNo;
         this.docrate = docrate;
+        this.docTiming = docTiming;
+    }
+
+    public String getDocTiming() {
+        return docTiming;
+    }
+
+    public void setDocTiming(String docTiming) {
+        this.docTiming = docTiming;
     }
 
     public String getDocName() {
