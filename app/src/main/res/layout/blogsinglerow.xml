@@ -23,7 +23,7 @@
             android:id="@+id/blogtitle"
             android:text="City"
             android:textStyle="bold"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textColor="#E6F3FF"
             tools:ignore="HardcodedText" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/blogbody"
             android:text="Body"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:autoLink="phone"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"
@@ -48,7 +48,7 @@
             android:textSize="13sp"
             android:autoLink="phone"
             android:textIsSelectable="true"
-            android:textColor="#EEF2F6"
+            android:textColor="#E91E63"
             android:layout_marginTop="5dp"
             android:layout_below="@id/blogbody"
             tools:ignore="HardcodedText" />
