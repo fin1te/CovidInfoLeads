@@ -108,7 +108,7 @@
                 android:padding="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_gravity="center"
-                android:text="Volunteers"
+                android:text="Team CovidInfoLeads ❤"
                 android:textSize="15sp"
                 android:textStyle="bold"
                 android:fontFamily="serif"
@@ -139,7 +139,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Simran Karim\nAnandita K\nShubhanjan C\nBhumika C\nVijyeta P\nAradhana V\nAnuj S\nShreya I\nRiddhima W\nMandakini\nTanvi A"
+                    android:text="Simran Karim\nAnandita K\nShubhanjan C\nBhumika C\nVijeyta P\nAradhana V\nAnuj S\nShreya I\nRiddhima W\nMandakini\nTanvi A"
                     android:gravity="center"
                     android:padding="10dp"
                     android:layout_gravity="center"
@@ -198,7 +198,7 @@
                     android:paddingVertical="5dp"
                     android:gravity="center"
                     android:textStyle="bold"
-                    android:text="+Many More Volunteers ❤"
+                    android:text="+Many More Volunteers ⚡"
                     android:textColor="@color/white"/>
             </GridLayout>
 

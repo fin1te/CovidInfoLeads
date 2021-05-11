@@ -34,7 +34,7 @@
             android:id="@+id/docNo"
             android:text="Body"
             android:textSize="17sp"
-            android:autoLink="phone"
+            android:autoLink="all"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"
             android:layout_marginTop="5dp"

@@ -20,9 +20,9 @@ public class doc_adapter extends FirebaseRecyclerAdapter<docmodel,doc_adapter.do
     protected void onBindViewHolder(@NonNull doc_viewholder doc_viewholder, int position, @NonNull docmodel docmodel) {
 
         doc_viewholder.docName.setText("Dr. " +docmodel.getDocName());
-        doc_viewholder.docNo.setText("Phone No : "+docmodel.getDocNo());
+        doc_viewholder.docNo.setText("📞 : "+docmodel.getDocNo());
         doc_viewholder.docrate.setText("Charges : "+docmodel.getDocrate());
-        doc_viewholder.docTiming.setText("Available Time : "+docmodel.getDocTiming());
+        doc_viewholder.docTiming.setText("Timings : "+docmodel.getDocTiming());
 
     }
 
