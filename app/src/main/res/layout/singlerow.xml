@@ -23,7 +23,7 @@
             android:id="@+id/cityName"
             android:text="City"
             android:textStyle="bold"
-            android:textSize="23sp"
+            android:textSize="20sp"
             android:textColor="#E6F3FF"
             tools:ignore="HardcodedText" />
 
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/resourcetype"
             android:text="Resource Type"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:layout_marginTop="5dp"
             android:textColor="#ff0066"
             android:layout_below="@id/cityName"
@@ -44,8 +44,8 @@
             android:layout_height="wrap_content"
             android:id="@+id/body"
             android:text="Body"
-            android:textSize="18sp"
-            android:autoLink="phone"
+            android:textSize="17sp"
+            android:autoLink="all"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"
             android:layout_marginTop="5dp"

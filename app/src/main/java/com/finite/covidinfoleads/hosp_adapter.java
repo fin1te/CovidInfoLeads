@@ -22,7 +22,7 @@ public class hosp_adapter extends FirebaseRecyclerAdapter<hospmodel,hosp_adapter
 
         hosp_viewholder.hospcity.setText(hospmodel.getHospcity());
         hosp_viewholder.hospname.setText(hospmodel.getHospname());
-        hosp_viewholder.hospno.setText("Phone No : "+hospmodel.getHospno());
+        hosp_viewholder.hospno.setText("📞 : "+hospmodel.getHospno());
 
     }
 

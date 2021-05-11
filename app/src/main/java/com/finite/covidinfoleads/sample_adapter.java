@@ -22,7 +22,7 @@ public class sample_adapter extends FirebaseRecyclerAdapter<samplemodel,sample_a
 
         sample_viewholder.samplecity.setText(samplemodel.getSamplecity());
         sample_viewholder.samplename.setText(samplemodel.getSamplename());
-        sample_viewholder.sampleno.setText("Phone No : "+samplemodel.getSampleno());
+        sample_viewholder.sampleno.setText("📞 : "+samplemodel.getSampleno());
 
     }
 
