@@ -273,7 +273,13 @@ public class CovidData extends AppCompatActivity {
 
                                     int_active_new = Integer.parseInt(str_confirmed_new)
                                             - (Integer.parseInt(str_recovered_new) + Integer.parseInt(str_death_new));
-                                    tv_active_new.setText("+"+new DecimalFormat("##,##,##0").format(int_active_new));
+                                    if((Integer.parseInt(str_recovered_new)+Integer.parseInt(str_death_new)< Integer.parseInt(str_confirmed_new))) {
+                                        tv_active_new.setText("+"+new DecimalFormat("##,##,##0").format(int_active_new));
+                                    }
+                                    else {
+                                        tv_active_new.setText(new DecimalFormat("##,##,##0").format(int_active_new));
+                                    }
+
 
                                     tv_recovered.setText(new DecimalFormat("##,##,##0").format(Integer.parseInt(str_recovered)));
                                     tv_recovered_new.setText("+"+new DecimalFormat("##,##,##0").format(Integer.parseInt(str_recovered_new)));
