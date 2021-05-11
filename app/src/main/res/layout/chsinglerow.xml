@@ -23,8 +23,8 @@
             android:id="@+id/chtitle"
             android:text="City"
             android:textStyle="bold"
-            android:textSize="23sp"
-            android:textColor="#E6F3FF"
+            android:textSize="20sp"
+            android:textColor="#E91E63"
             tools:ignore="HardcodedText" />
 
         <TextView
@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/chbody"
             android:text="Body"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:autoLink="phone"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"

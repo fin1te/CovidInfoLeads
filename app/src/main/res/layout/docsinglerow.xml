@@ -23,7 +23,7 @@
             android:id="@+id/docName"
             android:text="City"
             android:textStyle="bold"
-            android:textSize="23sp"
+            android:textSize="22sp"
             android:textColor="#E6F3FF"
             tools:ignore="HardcodedText" />
 
@@ -33,7 +33,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/docNo"
             android:text="Body"
-            android:textSize="18sp"
+            android:textSize="17sp"
             android:autoLink="phone"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"
@@ -44,14 +44,27 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/docTiming"
+            android:text="Body"
+            android:textSize="14sp"
+            android:autoLink="phone"
+            android:textIsSelectable="true"
+            android:textColor="#74FFB7"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/docNo"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/docrate"
             android:text="Body"
             android:textSize="14sp"
             android:autoLink="phone"
             android:textIsSelectable="true"
-            android:textColor="#EAAEFF"
+            android:textColor="#E91E63"
             android:layout_marginTop="5dp"
-            android:layout_below="@id/docNo"
+            android:layout_below="@id/docTiming"
             tools:ignore="HardcodedText" />
 
 

@@ -23,8 +23,8 @@ public class myadapter extends FirebaseRecyclerAdapter<model,myadapter.myviewhol
         holder.cityName.setText(model.getCityName());
         holder.resourcetype.setText(model.getResourcetype());
         holder.body.setText(model.getBody());
-        holder.verifiedtime.setText(model.getVerifiedtime());
-        holder.verifieddate.setText(model.getVerifieddate());
+        holder.verifiedtime.setText("Verification Time :"+model.getVerifiedtime());
+        holder.verifieddate.setText("Verification Date :"+model.getVerifieddate());
 
     }
 
