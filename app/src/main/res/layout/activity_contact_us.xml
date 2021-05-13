@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#161625"
     android:orientation="vertical"
-    tools:context=".ContactUs">
+    tools:context=".Dashboard_Folder.ContactUs">
 
     <ScrollView
         android:layout_width="match_parent"

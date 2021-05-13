@@ -5,72 +5,28 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161625"
-    tools:context=".Other">
+    tools:context=".Resource_Folder.Other">
 
-
-
-
-    <FrameLayout
+    <com.arlib.floatingsearchview.FloatingSearchView
+        android:id="@+id/othersearch"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:background="#1C1C2E"
+        app:floatingSearch_backgroundColor="#1C1C2E"
+        app:floatingSearch_close_search_on_keyboard_dismiss="true"
+        app:floatingSearch_hintTextColor="#958787"
+        app:floatingSearch_leftActionMode="showSearch"
+        app:floatingSearch_searchBarMarginLeft="10dp"
+        app:floatingSearch_searchBarMarginRight="10dp"
+        app:floatingSearch_searchBarMarginTop="10dp"
+        app:floatingSearch_searchHint="Search by City"
+        app:floatingSearch_showSearchKey="true"
+        app:floatingSearch_suggestionsListAnimDuration="250"
+        app:floatingSearch_viewSearchInputTextColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/othrecview"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_marginHorizontal="7dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:elevation="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_gravity="center|left"
-            android:layout_marginLeft="15dp"
-            android:textAlignment="center"
-            android:gravity="center"
-            app:layout_constraintStart_toEndOf="@+id/othrecview"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="HardcodedText,RtlHardcoded" />
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:elevation="20dp">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_other"
-                android:elevation="10dp"
-                android:layout_gravity="center|left"
-                android:layout_marginLeft="15dp"
-                tools:ignore="ContentDescription,RtlHardcoded" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="70dp"
-                android:layout_gravity="center"
-                android:paddingLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:elevation="8dp"
-                android:fontFamily="serif"
-                android:textStyle="bold"
-                android:gravity="center_vertical"
-                android:text="Others"
-                android:textAlignment="textStart"
-                android:textColor="#DFEDFA"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/othrecview"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText,RtlCompat,RtlHardcoded,RtlSymmetry" />
-
-        </FrameLayout>
-
-    </FrameLayout>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_baroth"
@@ -88,7 +44,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="85dp"
+        android:layout_marginTop="65dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,22 +1,22 @@
 package com.finite.covidinfoleads;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.HapticFeedbackConstants;
 import android.view.View;
 import android.widget.FrameLayout;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.firebase.database.FirebaseDatabase;
+import com.finite.covidinfoleads.Resource_Folder.All;
+import com.finite.covidinfoleads.Resource_Folder.Beds;
+import com.finite.covidinfoleads.Resource_Folder.Medicines;
+import com.finite.covidinfoleads.Resource_Folder.Other;
+import com.finite.covidinfoleads.Resource_Folder.Oxygen;
+import com.finite.covidinfoleads.Resource_Folder.Plasma;
 
 import java.util.Timer;
 import java.util.TimerTask;

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#161625"
-    tools:context=".Announcements">
+    tools:context=".Dashboard_Folder.Announcements">
 
     <FrameLayout
         android:id="@+id/frameLayout"
