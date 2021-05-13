@@ -13,8 +13,17 @@ import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.finite.covidinfoleads.Dashboard_Folder.AboutUs;
+import com.finite.covidinfoleads.Dashboard_Folder.Announcements;
+import com.finite.covidinfoleads.Dashboard_Folder.Blogs;
+import com.finite.covidinfoleads.Dashboard_Folder.ContactUs;
+import com.finite.covidinfoleads.Dashboard_Folder.Credits;
+import com.finite.covidinfoleads.Dashboard_Folder.DB_Covid_Helplines;
+import com.finite.covidinfoleads.Dashboard_Folder.DB_DoctorConsult;
+import com.finite.covidinfoleads.Dashboard_Folder.DB_HomeSampleRTPCR;
+import com.finite.covidinfoleads.Dashboard_Folder.DB_Hospital_Contacts;
+import com.finite.covidinfoleads.Dashboard_Folder.Disclaimer;
 
-import java.net.URI;
 import java.util.Timer;
 import java.util.TimerTask;
 
