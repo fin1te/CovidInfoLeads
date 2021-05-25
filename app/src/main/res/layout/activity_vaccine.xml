@@ -47,35 +47,81 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="serif"
-        android:text="Coming Soon!"
-        android:textColor="#FFC7C7"
-        android:textSize="25sp"
+        android:background="#E0C7FF"
+        android:elevation="20dp"
+        app:cardCornerRadius="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
 
-    <TextView
+        <EditText
+            android:id="@+id/vac_pincode"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:background="#E0C7FF"
+            android:hint="Enter your Pincode"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:paddingStart="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="serif"
-        android:text="Directly get Information of Vaccines\nAvailability in your District by your\nPincode on our App, starting from\nnext Version."
-        android:textColor="#E0C7FF"
         android:layout_marginTop="30dp"
-        android:textSize="15sp"
-        android:textAlignment="center"
+        android:elevation="30dp"
+        android:padding="5dp"
+        app:cardBackgroundColor="@color/transparent"
+        app:cardCornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:onClick="clickvaccheck"
+            android:src="@drawable/ic_green_tick" />
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:background="#E0C7FF"
+        android:elevation="20dp"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+        <TextView
+            android:id="@+id/vacdatepicker"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="#E0C7FF"
+            android:hint="Select Date"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:padding="5dp"
+            android:paddingStart="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
@@ -86,4 +132,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

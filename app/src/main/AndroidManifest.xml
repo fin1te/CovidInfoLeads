@@ -11,7 +11,8 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidInfoLeads">
-        <activity android:name=".Dashboard_Folder.Disclaimer"></activity>
+        <activity android:name=".VacHome"></activity>
+        <activity android:name=".Dashboard_Folder.Disclaimer" />
         <activity android:name=".Dashboard_Folder.ContactUs" />
         <activity android:name=".Dashboard_Folder.Credits" />
         <activity android:name=".Dashboard_Folder.AboutUs" />
