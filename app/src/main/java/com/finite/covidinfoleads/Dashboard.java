@@ -189,37 +189,37 @@ public class Dashboard extends AppCompatActivity {
         t1.schedule(new TimerTask() {
             @Override
             public void run() {
-                db_grid_1.animate().alpha(1f).setDuration(500);
+                db_grid_1.animate().alpha(1f).setDuration(300);
             }
-        }, 500);
+        }, 300);
 
         t2.schedule(new TimerTask() {
             @Override
             public void run() {
-                db_grid_2.animate().alpha(1f).setDuration(500);
+                db_grid_2.animate().alpha(1f).setDuration(300);
             }
-        }, 1000);
+        }, 600);
 
         t3.schedule(new TimerTask() {
             @Override
             public void run() {
-                db_grid_3.animate().alpha(1f).setDuration(500);
+                db_grid_3.animate().alpha(1f).setDuration(300);
             }
-        }, 1500);
+        }, 900);
 
         t4.schedule(new TimerTask() {
             @Override
             public void run() {
-                db_grid_4.animate().alpha(1f).setDuration(500);
+                db_grid_4.animate().alpha(1f).setDuration(300);
             }
-        }, 2000);
+        }, 1200);
 
         t5.schedule(new TimerTask() {
             @Override
             public void run() {
-                db_grid_5.animate().alpha(1f).setDuration(500);
+                db_grid_5.animate().alpha(1f).setDuration(300);
             }
-        }, 2500);
+        }, 1500);
     }
 
 }

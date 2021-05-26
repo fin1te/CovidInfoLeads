@@ -48,7 +48,7 @@ public class vac_adapter extends RecyclerView.Adapter<vac_adapter.vac_viewholder
         String age = String.valueOf(vacmodel.getAgeLimit());
         holder.vacrate.setText("Charges: "+vacmodel.getFeeType()+"\t\t     Age Limit: "+age+"+");
 
-        holder.doses.setText("Dose Availability :\nDose 1: "+dose1+"\nDose 2: "+dose2);
+        holder.doses.setText("Dose Availability :\n1st Dose: "+dose1+"\n2nd Dose: "+dose2);
 
     }
 

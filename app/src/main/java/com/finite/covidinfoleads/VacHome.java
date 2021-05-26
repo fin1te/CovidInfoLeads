@@ -1,6 +1,7 @@
 package com.finite.covidinfoleads;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,6 +12,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.HapticFeedbackConstants;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -45,6 +51,7 @@ public class VacHome extends AppCompatActivity {
     private ProgressDialog progressDialog;
     vac_adapter vacadapter;
     Timer t1;
+
     private ArrayList<vacmodel> centerList;
 
 
@@ -55,6 +62,7 @@ public class VacHome extends AppCompatActivity {
         setContentView(R.layout.activity_vac_home);
 
         vacreview = findViewById(R.id.vacrecview);
+
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         vacreview.setLayoutManager(new LinearLayoutManager(this));
@@ -145,46 +153,80 @@ public class VacHome extends AppCompatActivity {
                             centers_jsonArray = response.getJSONArray("centers");
 
                             if (centers_jsonArray.length() == 0) {
-                                Toast.makeText(VacHome.this, "No Centers Available!", Toast.LENGTH_LONG).show();
+
+                                Toast toast = new Toast(getApplicationContext());
+                                toast.setDuration(Toast.LENGTH_LONG);
+
+                                //inflate view
+                                View custom_view = getLayoutInflater().inflate(R.layout.toast_icon_text, null);
+                                ((TextView) custom_view.findViewById(R.id.message)).setText("No Centers Available!");
+                                ((ImageView) custom_view.findViewById(R.id.icon)).setImageResource(R.drawable.ic_close);
+                                ((CardView) custom_view.findViewById(R.id.parent_view)).setCardBackgroundColor(getResources().getColor(R.color.red_pie));
+
+                                toast.setView(custom_view);
+                                toast.show();
+
+
+                                //Toast.makeText(VacHome.this, "No Centers Available!", Toast.LENGTH_LONG).show();
                                 finish();
                             }
 
-                            for(int i=0; i< centers_jsonArray.length(); i++) {
-                                //vacmodel centerModel = new vacmodel();
-                                JSONObject centerObj = centers_jsonArray.getJSONObject(i);
+                            else {
 
-                                String centerName = centerObj.getString("name");
-                                String centerAddress = centerObj.getString("address");
-                                String centerFromTime = centerObj.getString("from");
-                                String centerToTime = centerObj.getString("to");
-                                String feeType = centerObj.getString("fee_type");
+                                Toast toast = new Toast(getApplicationContext());
+                                toast.setDuration(Toast.LENGTH_LONG);
+
+                                //inflate view
+                                View custom_view = getLayoutInflater().inflate(R.layout.toast_icon_text, null);
+                                ((TextView) custom_view.findViewById(R.id.message)).setText("All Open Centers");
+                                ((ImageView) custom_view.findViewById(R.id.icon)).setImageResource(R.drawable.ic_done);
+                                ((CardView) custom_view.findViewById(R.id.parent_view)).setCardBackgroundColor(getResources().getColor(R.color.neon_green));
+
+                                toast.setView(custom_view);
+                                toast.show();
 
 
-                                JSONObject sessionObj = centerObj.getJSONArray("sessions").getJSONObject(0);
-                                int dose1 = sessionObj.getInt("available_capacity_dose1");
-                                int dose2 = sessionObj.getInt("available_capacity_dose2");
-                                int ageLimit = sessionObj.getInt("min_age_limit");
-                                String vaccineName = sessionObj.getString("vaccine");
-                                //int availableCapacity = sessionObj.getInt("available_capacity");
+                                for(int i=0; i< centers_jsonArray.length(); i++) {
+                                    //vacmodel centerModel = new vacmodel();
+                                    JSONObject centerObj = centers_jsonArray.getJSONObject(i);
 
-                                vacmodel center = new vacmodel(
-                                        centerName,
-                                        centerAddress,
-                                        centerFromTime,
-                                        centerToTime,
-                                        feeType,
-                                        ageLimit,
-                                        vaccineName,
-                                        dose1,
-                                        dose2
-                                );
-                                //Toast.makeText(VacHome.this, centerName, Toast.LENGTH_SHORT).show();
-                                        //arrayList.add(center);
-                                arrayList.add(center);
+                                    String centerName = centerObj.getString("name");
+                                    String centerAddress = centerObj.getString("address");
+                                    String centerFromTime = centerObj.getString("from");
+                                    String centerToTime = centerObj.getString("to");
+                                    String feeType = centerObj.getString("fee_type");
+
+
+                                    JSONObject sessionObj = centerObj.getJSONArray("sessions").getJSONObject(0);
+                                    int dose1 = sessionObj.getInt("available_capacity_dose1");
+                                    int dose2 = sessionObj.getInt("available_capacity_dose2");
+                                    int ageLimit = sessionObj.getInt("min_age_limit");
+                                    String vaccineName = sessionObj.getString("vaccine");
+                                    //int availableCapacity = sessionObj.getInt("available_capacity");
+
+                                    vacmodel center = new vacmodel(
+                                            centerName,
+                                            centerAddress,
+                                            centerFromTime,
+                                            centerToTime,
+                                            feeType,
+                                            ageLimit,
+                                            vaccineName,
+                                            dose1,
+                                            dose2
+                                    );
+                                    //Toast.makeText(VacHome.this, centerName, Toast.LENGTH_SHORT).show();
+                                    //arrayList.add(center);
+                                    arrayList.add(center);
+                                }
+
+                                vacadapter = new vac_adapter(arrayList);
+                                vacreview.setAdapter(vacadapter);
+
+
+
                             }
 
-                            vacadapter = new vac_adapter(arrayList);
-                            vacreview.setAdapter(vacadapter);
 
 //                            //JSONObject data_india = all_state_jsonArray.getJSONObject(0);
 //                            //JSONObject test_data_india = testData_jsonArray.getJSONObject(testData_jsonArray.length()-1);
@@ -247,4 +289,8 @@ public class VacHome extends AppCompatActivity {
         requestQueue.add(jsonObjectRequest);
     }
 
+    public void clickvacclose(View view) {
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
+        finish();
+    }
 }

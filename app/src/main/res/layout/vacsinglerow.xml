@@ -44,11 +44,11 @@
             android:layout_height="wrap_content"
             android:id="@+id/vacTime"
             android:text="vacTime"
-            android:textSize="17sp"
+            android:textSize="15sp"
             android:autoLink="all"
             android:textIsSelectable="true"
             android:textColor="#EEF2F6"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="12dp"
             android:layout_below="@id/centAddress"
             tools:ignore="HardcodedText" />
 
@@ -58,8 +58,8 @@
             android:id="@+id/vacName"
             android:text="vacName"
             android:textSize="15sp"
-            android:layout_marginTop="7dp"
-            android:textColor="#58B5FF"
+            android:layout_marginTop="5dp"
+            android:textColor="#FFFFFF"
             android:layout_below="@id/vacTime"
             tools:ignore="HardcodedText" />
 
@@ -69,8 +69,8 @@
             android:id="@+id/vacrate"
             android:text="vacrate"
             android:textSize="15sp"
-            android:layout_marginTop="10dp"
-            android:textColor="#80FFA0"
+            android:layout_marginTop="5dp"
+            android:textColor="#58B5FF"
             android:layout_below="@id/vacName"
             tools:ignore="HardcodedText" />
 
@@ -89,9 +89,9 @@
             android:layout_height="wrap_content"
             android:id="@+id/doses"
             android:text="doses"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="12dp"
             android:textSize="15sp"
-            android:textColor="#FF9800"
+            android:textColor="#80FFA0"
             android:layout_below="@id/vacrate"
             tools:ignore="HardcodedText" />
 

@@ -47,81 +47,95 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#E0C7FF"
-        android:elevation="20dp"
-        app:cardCornerRadius="30dp"
+        android:columnCount="1"
+        android:background="@drawable/restop"
+        android:padding="10dp"
+        android:elevation="30dp"
+        android:id="@+id/vacGridLayout"
+        android:rowCount="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView">
-
-        <EditText
-            android:id="@+id/vac_pincode"
-            android:layout_width="200dp"
+        <FrameLayout
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#E0C7FF"
-            android:hint="Enter your Pincode"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:padding="5dp"
-            android:textStyle="bold"
-            android:paddingStart="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black" />
-    </androidx.cardview.widget.CardView>
+            android:background="@drawable/smallrestop"
+            android:layout_marginBottom="3dp"
+            android:elevation="10dp"
+            android:layout_gravity="center">
+
+            <EditText
+                android:id="@+id/vac_pincode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="📍 Pincode"
+                android:background="@color/transparent"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:textSize="16sp"
+                android:elevation="10dp"
+                android:maxLength="6"
+                android:fontFamily="serif"
+                android:paddingVertical="8dp"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+        </FrameLayout>
 
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:elevation="30dp"
-        android:padding="5dp"
-        app:cardBackgroundColor="@color/transparent"
-        app:cardCornerRadius="10dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:onClick="clickvaccheck"
-            android:src="@drawable/ic_green_tick" />
-    </androidx.cardview.widget.CardView>
 
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="#E0C7FF"
-        android:elevation="20dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView">
-
-        <TextView
-            android:id="@+id/vacdatepicker"
-            android:layout_width="100dp"
+        <FrameLayout
+            android:id="@+id/cardView2"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="#E0C7FF"
-            android:hint="Select Date"
-            android:importantForAutofill="no"
-            android:inputType="number"
-            android:padding="5dp"
-            android:paddingStart="10dp"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textColorHint="@color/black"
-            android:textStyle="bold" />
-    </androidx.cardview.widget.CardView>
+            android:background="@drawable/smallrestop"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/vacdatepicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="📆 Date"
+                android:importantForAutofill="no"
+                android:elevation="10dp"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="8dp"
+                android:fontFamily="serif"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+        </FrameLayout>
+    </GridLayout>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:elevation="30dp"-->
+<!--        android:padding="5dp"-->
+<!--        app:cardBackgroundColor="@color/transparent"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/vacGridLayout">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:onClick="clickvaccheck"-->
+<!--            android:src="@drawable/ic_green_tick" />-->
+<!--    </androidx.cardview.widget.CardView>-->
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
