@@ -29,11 +29,13 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:ignore="HardcodedText" />
-            <ImageView
+            <com.airbnb.lottie.LottieAnimationView
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:layout_gravity="center"
-                android:src="@drawable/ic_aboutus_board"/>
+                app:lottie_rawRes="@raw/lottie_aboutus"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -66,7 +68,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="We provide Personally Verified resources,\nall of which are verified by our own Volunteers.\nAs of v1.0.0, This App Supports:"
+                    android:text="We provide Personally Verified resources,\nall of which are verified by our own Volunteers.\nAs of v1.0.2, This App Supports:"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:textAlignment="center"
@@ -87,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1. Personally Verified Resources\n2. Real-Time COVID Cases\n3. Plasma Donor Registration\n4. Volunteer Registration"
+                    android:text="1. Personally Verified Resources\n2. Real-Time COVID Cases\n3. Plasma Donor Registration\n4. Volunteer Registration\n5. Vaccine Slots Availability"
                     android:gravity="center"
                     android:layout_gravity="center"
                     android:textAlignment="center"
