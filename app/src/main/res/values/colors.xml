@@ -21,6 +21,7 @@
     <color name="green_pie">#08a045</color>
     <color name="gray">#c4c4c4</color>
     <color name="bg">#EEEEEE</color>
+    <color name="neon_green">#1AFF6F</color>
 
     <color name="statusdark">#1E1E30</color>
 </resources>

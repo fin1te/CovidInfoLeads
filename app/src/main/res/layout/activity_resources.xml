@@ -19,63 +19,72 @@
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:foregroundGravity="center"
             android:layout_marginTop="15dp"
             android:layout_gravity="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:layout_gravity="center|left"
-                android:layout_marginHorizontal="7dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:elevation="8dp"
-                android:gravity="center"
-                android:textAlignment="center"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="HardcodedText,RtlHardcoded" />
+            <com.airbnb.lottie.LottieAnimationView
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                android:layout_gravity="center"
+                app:lottie_rawRes="@raw/resources_lottie"
+                app:lottie_autoPlay="true"
+                app:lottie_loop="true"/>
 
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:elevation="20dp">
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="70dp"-->
+<!--                android:layout_gravity="center|left"-->
+<!--                android:layout_marginHorizontal="7dp"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:elevation="8dp"-->
+<!--                android:gravity="center"-->
+<!--                android:textAlignment="center"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="20sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                tools:ignore="HardcodedText,RtlHardcoded" />-->
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center|left"
-                    android:layout_marginStart="15dp"
-                    android:elevation="10dp"
-                    android:src="@drawable/ic_shield"
-                    tools:ignore="ContentDescription" />
+<!--            <FrameLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:elevation="20dp">-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="70dp"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp"
-                    android:elevation="8dp"
-                    android:fontFamily="serif"
-                    android:textStyle="bold"
-                    android:paddingStart="20dp"
-                    android:gravity="center_vertical"
-                    android:text="Resources"
-                    android:textAlignment="textStart"
-                    android:textColor="#DFEDFA"
-                    android:textSize="25dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/recview"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="HardcodedText,RtlCompat,RtlHardcoded,RtlSymmetry" />
+<!--                <ImageView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center|left"-->
+<!--                    android:layout_marginStart="15dp"-->
+<!--                    android:elevation="10dp"-->
+<!--                    android:src="@drawable/ic_shield"-->
+<!--                    tools:ignore="ContentDescription" />-->
 
-            </FrameLayout>
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="70dp"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:layout_marginBottom="10dp"-->
+<!--                    android:elevation="8dp"-->
+<!--                    android:fontFamily="serif"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:paddingStart="20dp"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="Resources"-->
+<!--                    android:textAlignment="textStart"-->
+<!--                    android:textColor="#DFEDFA"-->
+<!--                    android:textSize="25dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/recview"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    tools:ignore="HardcodedText,RtlCompat,RtlHardcoded,RtlSymmetry" />-->
+
+<!--            </FrameLayout>-->
 
         </FrameLayout>
 
@@ -83,9 +92,8 @@
         <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="5dp"
             android:columnCount="2"
-            android:padding="10dp"
             android:layout_marginBottom="80dp"
             android:layout_gravity="center"
             android:rowCount="3"
@@ -97,7 +105,8 @@
                 android:id="@+id/f1"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_margin="3dp"
+                android:layout_marginHorizontal="10dp"
                 android:onClick="clickBeds"
                 android:background="@drawable/restop"
                 android:elevation="10dp">
@@ -132,7 +141,8 @@
                 android:id="@+id/f2"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_margin="3dp"
+                android:layout_marginHorizontal="10dp"
                 android:onClick="clickOxy"
                 android:background="@drawable/restop"
                 android:elevation="10dp">
@@ -166,8 +176,9 @@
                 android:id="@+id/f3"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_marginHorizontal="10dp"
                 android:onClick="clickMeds"
+                android:layout_margin="3dp"
                 android:background="@drawable/restop"
                 android:elevation="10dp">
 
@@ -200,7 +211,8 @@
                 android:id="@+id/f4"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_margin="3dp"
+                android:layout_marginHorizontal="10dp"
                 android:onClick="clickPlasma"
                 android:background="@drawable/restop"
                 android:elevation="10dp">
@@ -234,9 +246,10 @@
                 android:id="@+id/f5"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="20dp"
                 android:onClick="clickOther"
+                android:layout_margin="3dp"
                 android:background="@drawable/restop"
                 android:elevation="10dp">
 
@@ -269,8 +282,9 @@
                 android:id="@+id/f6"
                 android:layout_width="130dp"
                 android:layout_height="130dp"
-                android:layout_margin="10dp"
+                android:layout_marginHorizontal="10dp"
                 android:layout_marginBottom="20dp"
+                android:layout_margin="3dp"
                 android:onClick="clickAll"
                 android:background="@drawable/restop"
                 android:elevation="10dp">

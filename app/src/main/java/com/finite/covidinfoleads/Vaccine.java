@@ -1,19 +1,98 @@
 package com.finite.covidinfoleads;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 public class Vaccine extends AppCompatActivity {
 
+    EditText vac_pincode;
+    TextView vacdatepicker;
+    int year,month,date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vaccine);
+
+        vacdatepicker = findViewById(R.id.vacdatepicker);
+        vac_pincode = findViewById(R.id.vac_pincode);
+
+        Calendar calendar = Calendar.getInstance();
+
+        vacdatepicker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                year = calendar.get(Calendar.YEAR);
+                month = calendar.get(Calendar.MONTH);
+                date = calendar.get(Calendar.DAY_OF_MONTH);
+                DatePickerDialog datePickerDialog = new DatePickerDialog(Vaccine.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                        month++;
+                        vacdatepicker.setText(dayOfMonth+"-"+month+"-"+year);
+
+
+                        String pincode = vac_pincode.getText().toString();
+
+                        if(pincode.length() == 6) {
+
+
+
+                            SharedPreferences sh = getSharedPreferences("shCurrent", MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sh.edit();
+                            editor.putString("date",(dayOfMonth+"-"+month+"-"+year));
+                            editor.putString("pincode",pincode);
+                            editor.apply();
+
+                            Intent intent = new Intent(Vaccine.this, VacHome.class);
+                            startActivity(intent);
+
+                            vacdatepicker.setText("");
+                            vac_pincode.setText("");
+
+                        }
+                        else {
+                            vacdatepicker.setText("");
+
+                            Toast toast = new Toast(getApplicationContext());
+                            toast.setDuration(Toast.LENGTH_LONG);
+
+                            //inflate view
+                            View custom_view = getLayoutInflater().inflate(R.layout.toast_icon_text, null);
+                            ((TextView) custom_view.findViewById(R.id.message)).setText("Enter Pincode first!");
+                            ((ImageView) custom_view.findViewById(R.id.icon)).setImageResource(R.drawable.ic_close);
+                            ((CardView) custom_view.findViewById(R.id.parent_view)).setCardBackgroundColor(getResources().getColor(R.color.red_pie));
+
+                            toast.setView(custom_view);
+                            toast.show();
+                            //Toast.makeText(Vaccine.this, "Please Enter Pincode first!", Toast.LENGTH_SHORT).show();
+                        }
+
+
+                    }
+                }, year,month,date);
+                datePickerDialog.show();
+            }
+        });
+
+
+        vac_pincode = findViewById(R.id.vac_pincode);
 
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
@@ -58,4 +137,26 @@ public class Vaccine extends AppCompatActivity {
             }
         });
     }
+
+//    public void clickvaccheck(View view) {
+//        String pincode = vac_pincode.getText().toString();
+//
+//
+//        if(pincode.length()!= 6) {
+//            Toast.makeText(this, "Please enter Correct Pincode!", Toast.LENGTH_SHORT).show();
+//        }
+//        else if((vacdatepicker.getText().toString()).isEmpty()) {
+//            Toast.makeText(this, "Please Select a Date", Toast.LENGTH_SHORT).show();
+//        }
+//        else {
+//            SharedPreferences sh = getSharedPreferences("shCurrent", MODE_PRIVATE);
+//            SharedPreferences.Editor editor = sh.edit();
+//            editor.putString("pincode",pincode);
+//            editor.apply();
+//
+//            Intent intent = new Intent(Vaccine.this, VacHome.class);
+//            startActivity(intent);
+//        }
+//    }
+
 }

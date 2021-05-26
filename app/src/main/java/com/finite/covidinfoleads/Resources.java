@@ -139,44 +139,44 @@ public class Resources extends AppCompatActivity {
         t1.schedule(new TimerTask() {
             @Override
             public void run() {
-                f1.animate().alpha(1f).setDuration(500);
+                f1.animate().alpha(1f).setDuration(300);
             }
-        }, 500);
+        }, 300);
 
         t2.schedule(new TimerTask() {
             @Override
             public void run() {
-                f2.animate().alpha(1f).setDuration(500);
+                f2.animate().alpha(1f).setDuration(300);
             }
-        }, 500);
+        }, 300);
 
         t3.schedule(new TimerTask() {
             @Override
             public void run() {
-                f3.animate().alpha(1f).setDuration(500);
+                f3.animate().alpha(1f).setDuration(300);
             }
-        }, 1000);
+        }, 600);
 
         t4.schedule(new TimerTask() {
             @Override
             public void run() {
-                f4.animate().alpha(1f).setDuration(500);
+                f4.animate().alpha(1f).setDuration(300);
             }
-        }, 1000);
+        }, 600);
 
         t5.schedule(new TimerTask() {
             @Override
             public void run() {
-                f5.animate().alpha(1f).setDuration(500);
+                f5.animate().alpha(1f).setDuration(300);
             }
-        },1500);
+        },900);
 
         t6.schedule(new TimerTask() {
             @Override
             public void run() {
-                f6.animate().alpha(1f).setDuration(500);
+                f6.animate().alpha(1f).setDuration(300);
             }
-        }, 1500);
+        }, 900);
     }
 
 }

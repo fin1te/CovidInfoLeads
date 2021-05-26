@@ -37,45 +37,107 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="HardcodedText" />
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/imageView"
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/ic_vaccination"
+        app:lottie_rawRes="@raw/vaccine_lottie01"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
-    <TextView
-        android:id="@+id/textView3"
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:fontFamily="serif"
-        android:text="Coming Soon!"
-        android:textColor="#FFC7C7"
-        android:textSize="25sp"
+        android:columnCount="1"
+        android:background="@drawable/restop"
+        android:padding="10dp"
+        android:elevation="30dp"
+        android:id="@+id/vacGridLayout"
+        android:rowCount="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        tools:ignore="HardcodedText" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+        <FrameLayout
+            android:id="@+id/cardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/smallrestop"
+            android:layout_marginBottom="3dp"
+            android:elevation="10dp"
+            android:layout_gravity="center">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="serif"
-        android:text="Directly get Information of Vaccines\nAvailability in your District by your\nPincode on our App, starting from\nnext Version."
-        android:textColor="#E0C7FF"
-        android:layout_marginTop="30dp"
-        android:textSize="15sp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="HardcodedText" />
+            <EditText
+                android:id="@+id/vac_pincode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="📍 Pincode"
+                android:background="@color/transparent"
+                android:importantForAutofill="no"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:textSize="16sp"
+                android:elevation="10dp"
+                android:maxLength="6"
+                android:fontFamily="serif"
+                android:paddingVertical="8dp"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+        </FrameLayout>
+
+
+
+
+        <FrameLayout
+            android:id="@+id/cardView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/smallrestop"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            android:layout_marginTop="3dp">
+
+            <TextView
+                android:id="@+id/vacdatepicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/transparent"
+                android:hint="📆 Date"
+                android:importantForAutofill="no"
+                android:elevation="10dp"
+                android:inputType="number"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="8dp"
+                android:fontFamily="serif"
+                android:textAlignment="center"
+                android:textSize="16sp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#FFFFFF" />
+        </FrameLayout>
+    </GridLayout>
+
+<!--    <androidx.cardview.widget.CardView-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:elevation="30dp"-->
+<!--        android:padding="5dp"-->
+<!--        app:cardBackgroundColor="@color/transparent"-->
+<!--        app:cardCornerRadius="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/vacGridLayout">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="50dp"-->
+<!--            android:onClick="clickvaccheck"-->
+<!--            android:src="@drawable/ic_green_tick" />-->
+<!--    </androidx.cardview.widget.CardView>-->
 
     <com.ashokvarma.bottomnavigation.BottomNavigationBar
         android:id="@+id/bottom_navigation_bar"
@@ -86,4 +148,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -33,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="serif"
-                android:text="v1.0.1"
+                android:text="v1.0.2"
                 android:textColor="#FFD4E2"
                 android:textSize="13sp"
                 android:layout_gravity="center"

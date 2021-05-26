@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 
 import com.arlib.floatingsearchview.FloatingSearchView;
@@ -16,7 +17,6 @@ import com.finite.covidinfoleads.CovidData;
 import com.finite.covidinfoleads.Model.docmodel;
 import com.finite.covidinfoleads.Model.model;
 import com.finite.covidinfoleads.R;
-import com.finite.covidinfoleads.Resources;
 import com.finite.covidinfoleads.Vaccine;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.FirebaseDatabase;
