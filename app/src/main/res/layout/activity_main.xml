@@ -25,7 +25,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="v1.0.2"
+        android:text="v1.0.0"
         android:textColor="#FFC5C5"
         android:fontFamily="serif"
         android:textSize="15sp"

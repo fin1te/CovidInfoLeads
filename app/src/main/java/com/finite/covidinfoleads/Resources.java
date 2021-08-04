@@ -53,7 +53,7 @@ public class Resources extends AppCompatActivity {
         f5 = findViewById(R.id.f5);
         f6 = findViewById(R.id.f6);
 
-        timer();
+//        timer();
 
 
         bottomNavigationBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener(){
@@ -122,61 +122,61 @@ public class Resources extends AppCompatActivity {
     }
 
 
-    private void timer() {
-        t1 = new Timer();
-        f1.animate().alpha(0f).setDuration(1);
-        t2 = new Timer();
-        f2.animate().alpha(0f).setDuration(1);
-        t3 = new Timer();
-        f3.animate().alpha(0f).setDuration(1);
-        t4 = new Timer();
-        f4.animate().alpha(0f).setDuration(1);
-        t5 = new Timer();
-        f5.animate().alpha(0f).setDuration(1);
-        t6 = new Timer();
-        f6.animate().alpha(0f).setDuration(1);
-
-        t1.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f1.animate().alpha(1f).setDuration(300);
-            }
-        }, 300);
-
-        t2.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f2.animate().alpha(1f).setDuration(300);
-            }
-        }, 300);
-
-        t3.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f3.animate().alpha(1f).setDuration(300);
-            }
-        }, 600);
-
-        t4.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f4.animate().alpha(1f).setDuration(300);
-            }
-        }, 600);
-
-        t5.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f5.animate().alpha(1f).setDuration(300);
-            }
-        },900);
-
-        t6.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                f6.animate().alpha(1f).setDuration(300);
-            }
-        }, 900);
-    }
+//    private void timer() {
+//        t1 = new Timer();
+//        f1.animate().alpha(0f).setDuration(1);
+//        t2 = new Timer();
+//        f2.animate().alpha(0f).setDuration(1);
+//        t3 = new Timer();
+//        f3.animate().alpha(0f).setDuration(1);
+//        t4 = new Timer();
+//        f4.animate().alpha(0f).setDuration(1);
+//        t5 = new Timer();
+//        f5.animate().alpha(0f).setDuration(1);
+//        t6 = new Timer();
+//        f6.animate().alpha(0f).setDuration(1);
+//
+//        t1.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f1.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 300);
+//
+//        t2.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f2.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 300);
+//
+//        t3.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f3.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 600);
+//
+//        t4.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f4.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 600);
+//
+//        t5.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f5.animate().alpha(1f).setDuration(300);
+//            }
+//        },900);
+//
+//        t6.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                f6.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 900);
+//    }
 
 }
