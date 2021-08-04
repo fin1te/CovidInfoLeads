@@ -44,9 +44,9 @@ public class Dashboard extends AppCompatActivity {
         db_grid_4 = findViewById(R.id.db_grid_4);
         db_grid_5 = findViewById(R.id.db_grid_5);
 
-        db_grid_1.animate().alpha(0f);
+        //db_grid_1.animate().alpha(0f);
 
-        timer();
+//        timer();
 
         BottomNavigationBar bottomNavigationBar = (BottomNavigationBar) findViewById(R.id.bottom_navigation_bar);
 
@@ -174,52 +174,52 @@ public class Dashboard extends AppCompatActivity {
     }
 
 
-    private void timer() {
-        t1 = new Timer();
-        db_grid_1.animate().alpha(0f).setDuration(1);
-        t2 = new Timer();
-        db_grid_2.animate().alpha(0f).setDuration(1);
-        t3 = new Timer();
-        db_grid_3.animate().alpha(0f).setDuration(1);
-        t4 = new Timer();
-        db_grid_4.animate().alpha(0f).setDuration(1);
-        t5 = new Timer();
-        db_grid_5.animate().alpha(0f).setDuration(1);
-
-        t1.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                db_grid_1.animate().alpha(1f).setDuration(300);
-            }
-        }, 300);
-
-        t2.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                db_grid_2.animate().alpha(1f).setDuration(300);
-            }
-        }, 600);
-
-        t3.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                db_grid_3.animate().alpha(1f).setDuration(300);
-            }
-        }, 900);
-
-        t4.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                db_grid_4.animate().alpha(1f).setDuration(300);
-            }
-        }, 1200);
-
-        t5.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                db_grid_5.animate().alpha(1f).setDuration(300);
-            }
-        }, 1500);
-    }
+//    private void timer() {
+//        t1 = new Timer();
+//        db_grid_1.animate().alpha(0f).setDuration(1);
+//        t2 = new Timer();
+//        db_grid_2.animate().alpha(0f).setDuration(1);
+//        t3 = new Timer();
+//        db_grid_3.animate().alpha(0f).setDuration(1);
+//        t4 = new Timer();
+//        db_grid_4.animate().alpha(0f).setDuration(1);
+//        t5 = new Timer();
+//        db_grid_5.animate().alpha(0f).setDuration(1);
+//
+//        t1.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                db_grid_1.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 300);
+//
+//        t2.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                db_grid_2.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 600);
+//
+//        t3.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                db_grid_3.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 900);
+//
+//        t4.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                db_grid_4.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 1200);
+//
+//        t5.schedule(new TimerTask() {
+//            @Override
+//            public void run() {
+//                db_grid_5.animate().alpha(1f).setDuration(300);
+//            }
+//        }, 1500);
+//    }
 
 }
